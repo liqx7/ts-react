@@ -1,9 +1,11 @@
+const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.ts",
+  entry: { app: "./src/index.tsx" },
   output: {
-    filename: "app.js",
+    filename: "[name].[chunkhash:8].js",
+    path: path.resolve(__dirname, "../dist"),
   },
   resolve: {
     extensions: [".js", ".ts", ".tsx"],
@@ -22,4 +24,9 @@ module.exports = {
       template: "./src/tpl/index.html",
     }),
   ],
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+    },
+  },
 };

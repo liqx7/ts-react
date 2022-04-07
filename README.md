@@ -46,3 +46,16 @@ plugins new HtmlWebpackPlugin
 
 npm script
 
+
+react
+```
+yarn add react react-dom
+yarn add --dev @types/react @types/react-dom
+```
+配置react开发
+ts.config 
+  jsx
+
+webpack打包把业务文件和库文件拆开
+拆包
+optimization
